@@ -1,0 +1,17 @@
+[package]
+name = "elf2out"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Convert a static Zig-produced ELF binary into a native 9front (Plan 9) a.out executable"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = true
